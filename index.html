@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Profile Card</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <article class="card">
+      <figure class="card-img-wrapper">
+        <img
+          src="/assets/profile-img-1584x1584.jpg"
+          alt="kaska jr profile-img-1584x1584"
+          data-testid="profilePicture"
+        />
+      </figure>
+      <figcaption class="card-body">
+        <div class="card-content">
+          <h2 data-testid="fullName">Kanu Stanley</h2>
+          <h3 data-testid="jobTitle">Senior Frontend Developer</h3>
+          <p data-testid="shortBio">
+            Stanley Kanu is a Frontend Developer with expertise in React,
+            JavaScript, and TypeScript. He has experience building scalable web
+            applications using modern frameworks like Next.js, integrating APIs
+            with React Query and Context API, and creating reusable components
+            for optimized performance. He is passionate about delivering
+            efficient, user-friendly, and high-quality web solutions.
+          </p>
+          <div class="card-info">
+            <span class="location" data-testid="currentLocation"
+              ><i class="bx bxs-map-pin"></i> Lagos, Nigeria</span
+            >
+            <span class="email" data-testid="emailAddress"
+              ><i class="bx bx-envelope"></i> stanleykanu500@gmail.com</span
+            >
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="social-links" data-testid="socialLinks">
+            <a href="https://github.com/kaska-jr" target="_blank"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+            <a href="https://x.com/realstanleykanu" target="_blank"
+              ><i class="bx bxl-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/stanleykanu/" target="_blank"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+          </div>
+
+          <span class="current-time" data-testid="currentTimeUTC">time</span>
+        </div>
+      </figcaption>
+    </article>
+    <script>
+      const timeElement = document.querySelector(".current-time");
+      const now = new Date();
+      const utcDate =
+        now.getUTCFullYear() +
+        "-" +
+        String(now.getUTCMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(now.getUTCDate()).padStart(2, "0") +
+        " " +
+        String(now.getUTCHours()).padStart(2, "0") +
+        ":" +
+        String(now.getUTCMinutes()).padStart(2, "0") +
+        ":" +
+        String(now.getUTCSeconds()).padStart(2, "0");
+
+      console.log(utcDate);
+      timeElement.textContent = `${utcDate}`;
+    </script>
+  </body>
+</html>
